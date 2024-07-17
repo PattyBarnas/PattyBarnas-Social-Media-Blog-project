@@ -116,12 +116,11 @@ public class SocialMediaController {
         String newText = body.getMessage_text();
         
         Message message = messageService.updateMessage(messageId, newText);
-        // if(message != null ) {
+        if(message != null ) {
             context.status(200).json(message);
-        // }
-        // } else {
-        //     context.status(400);
-        // }
+        }else {
+            context.status(400);
+        }
      
     }
     private void getUserMessagesHandler(Context context) throws JsonProcessingException {

@@ -36,7 +36,7 @@ public class MessageService {
         return this.messageDAO.deleteMessageById(id);
     }
     public Message updateMessage(int id, String newText){        
-        if(newText.trim().isEmpty() || newText.trim().length() < 255) return null;
+        if(newText.trim().isEmpty()) return null;
     
         return this.messageDAO.updateMessage(id, newText);
     }
